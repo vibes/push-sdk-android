@@ -47,10 +47,6 @@ captures/
 # Keystore files
 # *.jks
 
-# Example app
-example-kotlin/.idea/
-example-kotlin/app/google-services.json
-
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 

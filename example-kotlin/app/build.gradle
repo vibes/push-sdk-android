@@ -9,7 +9,7 @@ android {
     namespace "com.android.exampleapp.kotlin"
     compileSdkVersion 34
     defaultConfig {
-        applicationId "com.android.exampleapp.kotlin"
+        applicationId "com.vibes.androidsdkexampleapp"
         minSdkVersion 23
         targetSdkVersion 34
         versionCode 1
@@ -18,8 +18,7 @@ android {
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         multiDexEnabled true
 
-        manifestPlaceholders = [vibesAppId: "<appId>",
-                                vibesApiUrl: "<appUrl>"]
+        manifestPlaceholders = [vibesAppId: "[YOUR_ANDROID_APP_ID]", vibesApiUrl: "[YOUR_API_URL]"]
     }
 
     packaging {
@@ -127,3 +126,4 @@ tasks.withType(JavaCompile).configureEach {
     '--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED',
     ]
 }
+

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-
-mkdir -p docs/public
-rm -rf docs/public/*
-./gradlew releaseJavadoc

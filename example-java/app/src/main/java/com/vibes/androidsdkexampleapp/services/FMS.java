@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-//import com.vibes.androidsdkexampleapp.BuildConfig;
+import com.vibes.androidsdkexampleapp.BuildConfig;
 import com.vibes.androidsdkexampleapp.model.SharedPrefsManager;
 import com.vibes.vibes.Vibes;
 

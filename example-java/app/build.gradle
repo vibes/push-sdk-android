@@ -24,6 +24,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         testOptions.unitTests.includeAndroidResources true
+        manifestPlaceholders = [vibesAppId: "[YOUR_ANDROID_APP_ID]", vibesApiUrl: "[YOUR_API_URL]"]
     }
 
     buildTypes {
@@ -35,6 +36,18 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    packaging {
+        resources {
+            excludes += [
+                    "META-INF/DEPENDENCIES"
+            ]
+        }
     }
 }
 
@@ -54,7 +67,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
     testImplementation 'junit:junit:4.13.1'
     implementation 'androidx.lifecycle:lifecycle-runtime:2.2.0'
-    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.2.0'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     testImplementation('org.robolectric:robolectric:4.14') {
@@ -67,7 +80,7 @@ dependencies {
     })
 
     implementation 'com.jakewharton:butterknife:10.2.3'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    kapt 'com.jakewharton:butterknife-compiler:10.2.3'
     testImplementation 'org.mockito:mockito-core:3.3.3'
 }
 
@@ -95,3 +108,4 @@ tasks.withType(JavaCompile).configureEach {
     '--add-opens=jdk.compiler/com.sun.tools.javac.jvm=ALL-UNNAMED',
     ]
 }
+

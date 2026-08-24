@@ -6,4 +6,5 @@ pluginManagement {
     }
 }
 
-include ':app', ':vibes'
+// Library-only root. Example apps use their own settings.gradle with project(':vibes').
+include ':vibes'

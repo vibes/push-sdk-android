@@ -24,7 +24,8 @@ public class DeepLinkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deep_link);
 
-        HashMap<String, String> pushMap  = (Map<String, String>) getIntent().getSerializableExtra(Vibes.VIBES_REMOTE_MESSAGE_DATA);
+        @SuppressWarnings("unchecked")
+        Map<String, String> pushMap = (Map<String, String>) getIntent().getSerializableExtra(Vibes.VIBES_REMOTE_MESSAGE_DATA);
         PushPayloadParser payload = new PushPayloadParser(pushMap);
         //this is for tracking which push messages have been opened by the user
         Vibes.getInstance().onPushMessageOpened(payload, this.getApplicationContext());
